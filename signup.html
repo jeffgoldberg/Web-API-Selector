@@ -2,15 +2,29 @@
 <html>
 <head lang="en">
   <meta charset="UTF-8">
-  <title></title>
-
+  <title>Z Practical</title>  
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><link href="./css/style.css" rel="stylesheet">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script> dc=document.cookie; var d = dc.split(","); console.log(d); 
+var source=d[0];  
+var title=d[1];
+var pic=d[2]; var pica=pic.split(";"); img=pica[0];
+ 
+  console.log(source);
+  console.log(title);
+  console.log(pic);
+  console.log(img);
+  </script>
   <!-- styles -->
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" rel="stylesheet">
 </head>
 <body>
   <div id="signup">
-    <div id="selected-product"></div>
+    <div id="selected-product">
+
+   
+   
 
     <h1>Most samples are available for a limited time only!</h1>
     <h2>Sign up to redeem while supplies last</h2>
@@ -24,12 +38,47 @@
       <input type="text" placeholder="City" name="city"/>
       <input type="text" placeholder="State" name="state"/>
       <input type="text" placeholder="Zip" name="zip"/>
+      <button  onclick=postData() class="button"  type="submit">submit</button>
+     </form>
+      <div class="imgHolder"><img border=".5" width="800" height="500" ></div> 
+       <div class="tit"></div>
+     
+</div>	
+ </div>     
+   <script>  
+        
+        $('div.tit').html(title);
+        $('div.imgHolder').html("<img src='" + img + "'>");
+  
 
-      <button class="" type="submit">submit</button>
-    </form>
-  </div>
-  <!-- scripts -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+
+      function postData() {
+ alert('1'); 
+
+         $(document).ready(function(){   
+      alert('2');
+    
+          var $form = $( this ),
+          term = form.find( "input[name='firstName']" ).val(),
+          term = form.find( "input[name='lastName']" ).val(),
+          term = form.find( "input[name='email']" ).val(),
+          term = form.find( "input[name='phone']" ).val(),
+          term = form.find( "input[name='streetAddress']" ).val(),
+          term = form.find( "input[name='city']" ).val(),
+          term = form.find( "input[name='state']" ).val(),
+          term = form.find( "input[name='zip']" ).val(),
+          url = "http://herokuapp.com/api/submissions";        
+
+          
+             
+          document.getElementByID("term").submit();
+          alert('3'); 
+        });
+      };
+  
+
+
+</script>
 </body>
 </html>

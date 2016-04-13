@@ -1,0 +1,16 @@
+ 
+	div.tit{
+	background-color:black;
+	color:yellow;
+	font-size:25px; padding-left: 1cm; padding-right: 5cm;
+        }
+	div.desc{
+	background-color:darkblue;
+	color:yellow;
+	font-size:18px; padding-left: 1cm; padding-right: 5cm;
+	}    
+	div.imgHolder{
+	position absolute; top: 0; bottom: 0; left: 1; right: 0;
+	padding-top: 1cm; padding-left: 6cm;
+	}
+  
