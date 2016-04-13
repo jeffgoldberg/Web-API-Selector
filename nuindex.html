@@ -1,22 +1,35 @@
-<html>
-<head>
+  <!DOCTYPE html>
+  <html> 
 
-    	
+  <head lang="en">
+  <meta charset="UTF-8">
+  <title>Z Practical</title>
 
-
-    <title> Practical</title>
-
- 
-  <!-- scripts -->
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <!-- styles -->
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" rel="stylesheet">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <link href="./css/style.css" rel="stylesheet">
+ 
   <script src="jquery-2.1.4.min.js"></script>
 
-  <script>
+<script>
+
+	// retrieve the source API string and cookie 
+
+	var query = window.location.search.substring(8);
+console.log(query);
+	
+	var source = query;
+console.log(source);
+
+	//save source string as cookie
+	document.cookie=source; 
+	var x = document.cookie;
+console.log("x = ");
+console.log(x);
+</script>
+ 
+<script>
   var $options = "";
   var $opt = "";
   var key; var key2;
@@ -60,16 +73,25 @@
 			
                         		$('div.desc').html(returndata.data[key2].description);
                         		$('div.tit').html(returndata.data[key2].title);
-                        		$("#tit").val(returndata.data[key2].title);
+                        		
                         
-                        		$("#desc").val(returndata.data[key2].description);
+                        		
                         		var desc2 = returndata.data[key2].description; 
                         		var pic = returndata.data[key2].images[0];
                         		var filename = returndata.data[key2].images[0];
              	
-                        $('div.imgHolder').html("<img src='" + filename + "'>");
-                
-       				}
+                        $('div.imgHolder').html("<a href='signup.html'><img border='.5' width='600' height='300' src='" + filename + "'><style> div.imgHolder {padding-top: .1cm; padding-left: 8cm; } </style></a>");
+                                        //save  as cookie
+                                        cook= source + "," + $tit + "," + filename;
+                                        document.cookie=cook;
+                        
+	
+console.log("c = ");
+console.log(cook);
+
+
+                        return(cook);
+                                }
                 	});
 
                         
@@ -147,32 +169,24 @@
 </head>
 <body>
 
-  <style> 
-	div.tit{
-	background-color:black;
-	color:yellow;
-	font-size:28px;
-        }
-	div.desc{
-	background-color:darkblue;
-	color:yellow;
-	font-size:20px;
-	}    
-	div.imgHolder{
-	position absolute; top: 0; bottom: 0; left: 0; right: 0;
-	margin: auto;
-	}
-  </style>
+
+  <!-- scripts -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
 
-	<center><h1><font color="blue">API Item Selection</font></h1></center><br />
+
+
+	<!-- center><h1><font color="blue">API Item Selection</font></h1></center><br /> -->
    
 	<script> console.log('    select   '); </script>
 	<script> console.log($options); </script>
 
 
 	<!-- Selector displays options in document.write() method -->
-
+<div id="landing-page">
+    <h1>Check out these free samples!</h1>
+    <h2>Select a sample below</h2>
 	<select id="selector"><option id="0" selected="selected">Select Item</option>
  
 	<script> document.write($options); </script>
@@ -181,15 +195,14 @@
 	<br />
 	<br />
 	<br />
-
-
+</div>
+<div class="gif-results" ">
 	<div class="tit" "></div><br /><br />
-	<div class="desc" "></div><br />
-	<div class="imgHolder"><img src=http://zeeto.io/theme/zeetosite/images/our-clients-2.jpg></div>
-
+	<div class="desc" "></div><br /> <style> div.imgHolder {padding-top: .1cm; padding-left: 1cm; } </style>
+	<div class="imgHolder"><img border=".5" width="1100" height="500"  src=http://zeeto.io/theme/zeetosite/images/our-clients-2.jpg></div>
+</div>
+<<!-- scripts -->
+ 
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 </body>
-
-
-
-
 </html>
